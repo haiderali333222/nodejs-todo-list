@@ -1,0 +1,434 @@
+{
+	"info": {
+		"_postman_id": "a6c7ff26-5f92-4ac5-91ca-1fc70100f445",
+		"name": "Todo-List",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11015494",
+		"_collection_link": "https://haiderteam.postman.co/workspace/My-Workspace~4437380f-0945-434a-88f4-ff91f524a01f/collection/18048426-a6c7ff26-5f92-4ac5-91ca-1fc70100f445?action=share&source=collection_link&creator=11015494"
+	},
+	"item": [
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\":\"Test Project\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}project",
+							"host": [
+								"{{API_URL}}project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"id\": \"673ce0bb9e74ce09b6908f90\"\r\n    },\r\n    \"data\": {\r\n        \"name\": \" Project YY\",\r\n        \"startDate\": \"2024-11-21\",\r\n        \"dueDate\": \"2024-11-19\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}project",
+							"host": [
+								"{{API_URL}}project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"id\": \"673ce0bb9e74ce09b6908f90\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}project",
+							"host": [
+								"{{API_URL}}project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"filter\":{\r\n     \"name\":\"Proje\"\r\n    // \"dueDate\": \"2024-11-19\"\r\n  },\r\n  \"sort\":\"dueDate\",\r\n  \"order\":\"1\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}project/all",
+							"host": [
+								"{{API_URL}}project"
+							],
+							"path": [
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}project/?id=673cd4bbb7c95a034dbb9054",
+							"host": [
+								"{{API_URL}}project"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "673cd4bbb7c95a034dbb9054"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\":\"Task xx\",\r\n    \"startDate\": \"2024-11-21\",\r\n    \"dueDate\": \"2024-11-22\",\r\n    \"projectId\":\"673d02810bd6bdbc8fdcaa00\",\r\n    \"status\":\"to-do\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}task",
+							"host": [
+								"{{API_URL}}task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"id\": \"673ce0bb9e74ce09b6908f90\"\r\n    },\r\n    \"data\": {\r\n        \"name\": \" Project YY\",\r\n        \"startDate\": \"2024-11-21\",\r\n        \"dueDate\": \"2024-11-19\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}task",
+							"host": [
+								"{{API_URL}}task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTaskStatus",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"id\": \"673cedf53beb032c57eef067\"\r\n    },\r\n    \"data\": {\r\n        \"status\": \"to-do\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}task/status",
+							"host": [
+								"{{API_URL}}task"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign-to-project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"id\": \"673d02a00bd6bdbc8fdcaa01\"\r\n    },\r\n    \"data\": {\r\n        \"projectId\": \"673d02810bd6bdbc8fdcaa00\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}task/assign-to-project",
+							"host": [
+								"{{API_URL}}task"
+							],
+							"path": [
+								"assign-to-project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"id\": \"673ce0bb9e74ce09b6908f90\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}task",
+							"host": [
+								"{{API_URL}}task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"filter\":{\r\n    //  \"name\":\"Proje\"\r\n    // \"dueDate\": \"2024-11-19\"\r\n    // \"status\":\"done\"\r\n  },\r\n  \"sort\":\"dueDate\",\r\n  \"order\":\"1\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}task/all",
+							"host": [
+								"{{API_URL}}task"
+							],
+							"path": [
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}task/?id=673cf77e8862cbf4cda68759",
+							"host": [
+								"{{API_URL}}task"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "673cf77e8862cbf4cda68759"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tasks-of-due-projects",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}task/tasks-of-due-projects",
+							"host": [
+								"{{API_URL}}task"
+							],
+							"path": [
+								"tasks-of-due-projects"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "projct-of-due-tasks",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}task/project-of-due-tasks",
+							"host": [
+								"{{API_URL}}task"
+							],
+							"path": [
+								"project-of-due-tasks"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_URL",
+			"value": "http://localhost:8081/",
+			"type": "string"
+		}
+	]
+}

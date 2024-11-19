@@ -2,7 +2,13 @@ Node.JS
 ============
 
 
-This is a node.js boiler plate code that contains an onion architecture like setup and already has mongo , express and joi configured 
+
+INSTRUCTION TO RUN
+============
+
+run command : npm run dev
+postman collection added
+
 ---
 ## Give me a Headsup
 
